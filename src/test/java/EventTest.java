@@ -88,4 +88,18 @@ public class EventTest {
     assertEquals(300, testEvent.getEventPrice());
   }
 
+  @Test
+  public void calculateEventPrice_fiftyPeopleThreeCourseCashBarCakeNoCouponsNoEntertainment_700() {
+    Event testEvent = new Event(50, "three course", "cash bar", true, "", "");
+    testEvent.calculateEventPrice();
+    assertEquals(700, testEvent.getEventPrice());
+  }
+
+  @Test
+  public void calculateEventPrice_fiftyPeopleThreeCourseCashBarCakeNoCouponsKaraoke_750() {
+    Event testEvent = new Event(50, "three course", "cash bar", true, "karaoke", "");
+    testEvent.calculateEventPrice();
+    assertEquals(750, testEvent.getEventPrice());
+  }
+
 }
