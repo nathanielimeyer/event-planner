@@ -22,7 +22,7 @@ public class EventTest {
   }
 
   @Test
-  public void getLevelOfDrinkService_getsLevelOfDrinkService_snacks() {
+  public void getLevelOfDrinkService_getsLevelOfDrinkService_fullbar() {
     Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
     assertEquals("full bar", testEvent.getLevelOfDrinkService());
   }
@@ -31,6 +31,12 @@ public class EventTest {
   public void getCake_getsCake_true() {
     Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
     assertEquals(true, testEvent.getCake());
+  }
+
+  @Test
+  public void getLevelOfEntertainment_getsLevelOfEntertainment_band() {
+    Event testEvent = new Event(100, "snacks", "full bar", true, "band", "noise");
+    assertEquals("band", testEvent.getLevelOfEntertainment());
   }
 
 }

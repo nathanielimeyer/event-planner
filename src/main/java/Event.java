@@ -11,6 +11,7 @@ class Event {
     mLevelOfFoodService = levelOfFoodService;
     mLevelOfDrinkService = levelOfDrinkService;
     mCake = cake;
+    mLevelOfEntertainment = levelOfEntertainment;
   }
 
   public int getNumberOfAttendees() {
@@ -26,6 +27,10 @@ class Event {
   }
 
   public boolean getCake() {
+    return mCake;
+  }
+
+  public boolean getLevelOfEntertainment() {
     return mCake;
   }
 
