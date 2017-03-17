@@ -10,22 +10,27 @@ public class EventTest {
   }
 
   @Test
-  public void newEvent_getsNumberOfAttendees_100() {
+  public void getNumberOfAttendees_getsNumberOfAttendees_100() {
     Event testEvent = new Event(100, "noise", "noise", true, "noise", "noise");
     assertEquals(100, testEvent.getNumberOfAttendees());
   }
 
   @Test
-  public void newEvent_getsLevelOfFoodService_snacks() {
+  public void getLevelOfFoodService_getsLevelOfFoodService_snacks() {
     Event testEvent = new Event(100, "snacks", "noise", true, "noise", "noise");
     assertEquals("snacks", testEvent.getLevelOfFoodService());
   }
 
   @Test
-  public void newEvent_getsLevelOfDrinkService_snacks() {
+  public void getLevelOfDrinkService_getsLevelOfDrinkService_snacks() {
     Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
     assertEquals("full bar", testEvent.getLevelOfDrinkService());
   }
 
+  @Test
+  public void getCake_getsCake_true() {
+    Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
+    assertEquals(true, testEvent.getCake());
+  }
 
 }

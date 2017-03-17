@@ -10,6 +10,7 @@ class Event {
     mNumberOfAttendees = numberOfAttendees;
     mLevelOfFoodService = levelOfFoodService;
     mLevelOfDrinkService = levelOfDrinkService;
+    mCake = cake;
   }
 
   public int getNumberOfAttendees() {
@@ -22,6 +23,10 @@ class Event {
 
   public String getLevelOfDrinkService() {
     return mLevelOfDrinkService;
+  }
+
+  public boolean getCake() {
+    return mCake;
   }
 
 }
