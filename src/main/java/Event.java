@@ -10,6 +10,7 @@ class Event {
   private int mEntertainmentCost;
   private String mCouponCode;
   private int mServicePercentDiscount;
+  private int mPackagePercentDiscount;
   private int mEventPrice;
 
   public Event(int numberOfAttendees, String levelOfFoodService, String levelOfDrinkService, boolean cake, String levelOfEntertainment, String couponCode) {
@@ -46,6 +47,8 @@ class Event {
     mCouponCode = couponCode;
     if (mCouponCode.equals("10PercentServiceDiscount")) {
       mServicePercentDiscount = 10;
+    } else if (mCouponCode.equals("10PercentPackageDiscount")) {
+      mPackagePercentDiscount = 10;
     }
   }
 
@@ -78,7 +81,7 @@ class Event {
   }
 
   public void calculateEventPrice() {
-    mEventPrice = (mNumberOfAttendees * (mFoodServiceUnitCost + mDrinkServiceUnitCost + mCakeUnitCost) * (100 - mServicePercentDiscount)/100 + mEntertainmentCost);
+    mEventPrice = ((mNumberOfAttendees * (mFoodServiceUnitCost + mDrinkServiceUnitCost + mCakeUnitCost) * (100 - mServicePercentDiscount)/100 + mEntertainmentCost) * (100 - mPackagePercentDiscount)/100);
   }
 
 }
