@@ -34,9 +34,9 @@ public class EventTest {
   }
 
   @Test
-  public void getLevelOfEntertainment_getsLevelOfEntertainment_band() {
-    Event testEvent = new Event(100, "snacks", "full bar", true, "band", "noise");
-    assertEquals("band", testEvent.getLevelOfEntertainment());
+  public void getCouponCode_getsCouponCode_freeDJ() {
+    Event testEvent = new Event(100, "snacks", "full bar", true, "band", "freeDJ");
+    assertEquals("freeDJ", testEvent.getCouponCode());
   }
 
 }
