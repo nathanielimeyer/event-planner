@@ -131,7 +131,7 @@ public class EventTest {
   }
 
   @Test
-  public void calculateEventPrice_one1001PeopleSevenCourseOpenBarCakeBand10PercentPackageDiscount_35135p1() {
+  public void calculateEventPrice_one1001PeopleSevenCourseOpenBarCakeBand10PercentPackageDiscount_35134p2() {
     Event testEvent = new Event(1001, "seven course", "open bar", true, "band", "10PercentPackageDiscount");
     testEvent.calculateEventPrice();
     assertEquals(35134.2, testEvent.getEventPrice(), 0);
