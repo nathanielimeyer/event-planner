@@ -81,7 +81,7 @@ class Event {
   }
 
   public void calculateEventPrice() {
-    mEventPrice = ((mNumberOfAttendees * (mFoodServiceUnitCost + mDrinkServiceUnitCost + mCakeUnitCost) * (100 - mServicePercentDiscount)/100 + mEntertainmentCost) * (100 - mPackagePercentDiscount)/100);
+    mEventPrice = (((double) mNumberOfAttendees * (mFoodServiceUnitCost + mDrinkServiceUnitCost + mCakeUnitCost) * (100 - mServicePercentDiscount)/100 + (double) mEntertainmentCost) * (100 - mPackagePercentDiscount)/100);
   }
 
 }
