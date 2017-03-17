@@ -3,6 +3,7 @@ class Event {
   private String mLevelOfFoodService;
   private int mFoodServiceUnitCost;
   private String mLevelOfDrinkService;
+  private int mDrinkServiceUnitCost;
   private boolean mCake;
   private String mLevelOfEntertainment;
   private String mCouponCode;
@@ -21,6 +22,12 @@ class Event {
       mFoodServiceUnitCost = 30;
     }
     mLevelOfDrinkService = levelOfDrinkService;
+    if (mLevelOfDrinkService.equals("full bar")) {
+      mDrinkServiceUnitCost = 5;
+    }
+    else if (mLevelOfDrinkService.equals("cash bar")) {
+      mDrinkServiceUnitCost = 1;
+    }
     mCake = cake;
     mLevelOfEntertainment = levelOfEntertainment;
     mCouponCode = couponCode;
@@ -55,7 +62,7 @@ class Event {
   }
 
   public void calculateEventPrice() {
-    mEventPrice = (mNumberOfAttendees * mFoodServiceUnitCost);
+    mEventPrice = (mNumberOfAttendees * (mFoodServiceUnitCost + mDrinkServiceUnitCost));
   }
 
 }
