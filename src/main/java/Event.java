@@ -24,7 +24,7 @@ class Event {
       mFoodServiceUnitCost = 30;
     }
     mLevelOfDrinkService = levelOfDrinkService;
-    if (mLevelOfDrinkService.equals("full bar")) {
+    if (mLevelOfDrinkService.equals("open bar")) {
       mDrinkServiceUnitCost = 5;
     }
     else if (mLevelOfDrinkService.equals("cash bar")) {

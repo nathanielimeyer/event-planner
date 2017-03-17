@@ -22,20 +22,20 @@ public class EventTest {
   }
 
   @Test
-  public void getLevelOfDrinkService_getsLevelOfDrinkService_fullbar() {
-    Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
-    assertEquals("full bar", testEvent.getLevelOfDrinkService());
+  public void getLevelOfDrinkService_getsLevelOfDrinkService_openbar() {
+    Event testEvent = new Event(100, "snacks", "open bar", true, "noise", "noise");
+    assertEquals("open bar", testEvent.getLevelOfDrinkService());
   }
 
   @Test
   public void getCake_getsCake_true() {
-    Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
+    Event testEvent = new Event(100, "snacks", "open bar", true, "noise", "noise");
     assertEquals(true, testEvent.getCake());
   }
 
   @Test
   public void getCouponCode_getsCouponCode_freeDJ() {
-    Event testEvent = new Event(100, "snacks", "full bar", true, "band", "freeDJ");
+    Event testEvent = new Event(100, "snacks", "open bar", true, "band", "freeDJ");
     assertEquals("freeDJ", testEvent.getCouponCode());
   }
 
@@ -68,8 +68,8 @@ public class EventTest {
   }
 
   @Test
-  public void calculateEventPrice_one100PeopleNoFoodFullBarNoExtrasNoCoupons_500() {
-    Event testEvent = new Event(100, "", "full bar", false, "", "");
+  public void calculateEventPrice_one100PeopleNoFoodOpenBarNoExtrasNoCoupons_500() {
+    Event testEvent = new Event(100, "", "open bar", false, "", "");
     testEvent.calculateEventPrice();
     assertEquals(500, testEvent.getEventPrice());
   }
@@ -103,15 +103,15 @@ public class EventTest {
   }
 
   @Test
-  public void calculateEventPrice_three300PeopleFiveCourseFullBarCakeNoCouponsBand_9400() {
-    Event testEvent = new Event(300, "five course", "full bar", true, "band", "");
+  public void calculateEventPrice_three300PeopleFiveCourseOpenBarCakeNoCouponsBand_9400() {
+    Event testEvent = new Event(300, "five course", "open bar", true, "band", "");
     testEvent.calculateEventPrice();
     assertEquals(9400, testEvent.getEventPrice());
   }
 
   @Test
-  public void calculateEventPrice_one150PeopleFiveCourseFullBarCakeNoCouponsDJ_4500() {
-    Event testEvent = new Event(150, "five course", "full bar", true, "DJ", "");
+  public void calculateEventPrice_one150PeopleFiveCourseOpenBarCakeNoCouponsDJ_4500() {
+    Event testEvent = new Event(150, "five course", "open bar", true, "DJ", "");
     testEvent.calculateEventPrice();
     assertEquals(4500, testEvent.getEventPrice());
   }
