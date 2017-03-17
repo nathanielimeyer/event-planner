@@ -15,9 +15,10 @@ _Project specifications / BDD_
 |Create an event object based on the following:|||
 | * Number of attendees|||
 | * Level of food service (5 course meal, 3 course meal, light snacks, hors d'ouvres) |||
-| * Will there be cake? |||
+| * Cake (true/false) |||
 | * Level of beverage service (full bar, cash bar)|||
 | * Level of entertainment (a band, a dj, dance instructors)|||
+|Calculate price as a function of ((number of Attendees x (foodLevel + full bar + cake))+(entertainment cost))*discount |||
 
 ## Setup/Installation Requirements
 
