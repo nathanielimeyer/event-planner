@@ -39,4 +39,11 @@ public class EventTest {
     assertEquals("freeDJ", testEvent.getCouponCode());
   }
 
+  @Test
+  public void calculateEventPrice_one100PeopleSnacksNoExtrasNoCoupons_400() {
+    Event testEvent = new Event(100, "snacks", "", false, "", "");
+    testEvent.calculateEventPrice();
+    assertEquals(400, testEvent.getEventPrice());
+  }
+
 }
