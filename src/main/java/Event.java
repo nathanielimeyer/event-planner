@@ -30,8 +30,8 @@ class Event {
     return mCake;
   }
 
-  public boolean getLevelOfEntertainment() {
-    return mCake;
+  public String getLevelOfEntertainment() {
+    return mLevelOfEntertainment;
   }
 
 }
