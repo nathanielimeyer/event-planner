@@ -107,7 +107,7 @@ class Event {
   }
 
   public int getEntertainmentCost() {
-    return 0;
+    return mEntertainmentCost;
   }
 
   public String getCouponCode() {
