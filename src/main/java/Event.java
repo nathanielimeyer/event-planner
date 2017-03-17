@@ -11,7 +11,7 @@ class Event {
   private String mCouponCode;
   private int mServicePercentDiscount;
   private int mPackagePercentDiscount;
-  private int mEventPrice;
+  private double mEventPrice;
 
   public Event(int numberOfAttendees, String levelOfFoodService, String levelOfDrinkService, boolean cake, String levelOfEntertainment, String couponCode) {
     mNumberOfAttendees = numberOfAttendees;
@@ -76,7 +76,7 @@ class Event {
     return mCouponCode;
   }
 
-  public int getEventPrice() {
+  public double getEventPrice() {
     return mEventPrice;
   }
 
