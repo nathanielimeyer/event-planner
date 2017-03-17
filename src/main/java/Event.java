@@ -61,6 +61,8 @@ class Event {
       mEntertainmentCost = 1000;
     } else if (mLevelOfEntertainment.equals("DJ")) {
       mEntertainmentCost = 300;
+    } else {
+      mEntertainmentCost = 0;
     }
   }
 
@@ -127,6 +129,7 @@ class Event {
   }
 
   public double getEventPrice() {
+    calculateEventPrice();
     return mEventPrice;
   }
 
