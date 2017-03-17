@@ -21,6 +21,11 @@ public class EventTest {
     assertEquals("snacks", testEvent.getLevelOfFoodService());
   }
 
-  
+  @Test
+  public void newEvent_getsLevelOfDrinkService_snacks() {
+    Event testEvent = new Event(100, "snacks", "full bar", true, "noise", "noise");
+    assertEquals("full bar", testEvent.getLevelOfDrinkService());
+  }
+
 
 }
