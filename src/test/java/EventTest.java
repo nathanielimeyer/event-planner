@@ -46,4 +46,25 @@ public class EventTest {
     assertEquals(400, testEvent.getEventPrice());
   }
 
+  @Test
+  public void calculateEventPrice_one100PeopleThreeCourseNoExtrasNoCoupons_1000() {
+    Event testEvent = new Event(100, "three course", "", false, "", "");
+    testEvent.calculateEventPrice();
+    assertEquals(1000, testEvent.getEventPrice());
+  }
+
+  @Test
+  public void calculateEventPrice_one100PeopleFiveCourseNoExtrasNoCoupons_2000() {
+    Event testEvent = new Event(100, "five course", "", false, "", "");
+    testEvent.calculateEventPrice();
+    assertEquals(2000, testEvent.getEventPrice());
+  }
+
+  @Test
+  public void calculateEventPrice_one100PeopleSevenCourseNoExtrasNoCoupons_3000() {
+    Event testEvent = new Event(100, "seven course", "", false, "", "");
+    testEvent.calculateEventPrice();
+    assertEquals(3000, testEvent.getEventPrice());
+  }
+
 }

@@ -13,6 +13,12 @@ class Event {
     mLevelOfFoodService = levelOfFoodService;
     if (mLevelOfFoodService.equals("snacks")) {
       mFoodServiceUnitCost = 4;
+    } else if (mLevelOfFoodService.equals("three course")) {
+      mFoodServiceUnitCost = 10;
+    } else if (mLevelOfFoodService.equals("five course")) {
+      mFoodServiceUnitCost = 20;
+    } else if (mLevelOfFoodService.equals("seven course")) {
+      mFoodServiceUnitCost = 30;
     }
     mLevelOfDrinkService = levelOfDrinkService;
     mCake = cake;
