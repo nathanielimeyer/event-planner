@@ -39,6 +39,8 @@ class Event {
       mEntertainmentCost = 50;
     } else if (mLevelOfEntertainment.equals("band")) {
       mEntertainmentCost = 1000;
+    } else if (mLevelOfEntertainment.equals("DJ")) {
+      mEntertainmentCost = 300;
     }
     mCouponCode = couponCode;
   }
