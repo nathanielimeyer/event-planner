@@ -14,7 +14,7 @@ _Project specifications / BDD_
 |-----------|:---:|:----:|
 |Create an event object based on the following:|||
 | * Number of attendees|||
-| * Level of food service (5 course meal, 3 course meal, light snacks, hors d'ouvres) |||
+| * Level of food service  |||
 | * Cake (true/false) |||
 | * Level of beverage service (full bar, cash bar)|||
 | * Level of entertainment (a band, a dj, dance instructors)|||
@@ -23,10 +23,8 @@ _Project specifications / BDD_
 ## Setup/Installation Requirements
 
 * _In any folder with git installed, run "git clone https://github.com/nathanielimeyer/event-planner/"._
-* _type "cd ./event-planner" and enter_
-* _type "gradle compileJava" and enter_
-* _type "cd build/classes/main" and enter_
-* _type "java App" end enter_
+* _type "cd ./event-planner/src/main/java" and enter_
+* _type "javac App.java && java App" and enter_
 
 ## Known Bugs
 
