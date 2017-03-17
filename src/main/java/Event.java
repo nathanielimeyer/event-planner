@@ -11,12 +11,24 @@ class Event {
   private String mCouponCode;
   private int mServicePercentDiscount;
   private int mPackagePercentDiscount;
-  private double mEventPrice;
   private int mFlatDiscount;
+  private double mEventPrice;
 
   public Event(int numberOfAttendees, String levelOfFoodService, String levelOfDrinkService, boolean cake, String levelOfEntertainment, String couponCode) {
     mNumberOfAttendees = numberOfAttendees;
     mLevelOfFoodService = levelOfFoodService;
+    determineFoodServiceUnitCost();
+    mLevelOfDrinkService = levelOfDrinkService;
+    determineDrinkServiceUnitCost();
+    mCake = cake;
+    determineCakeUnitCost();
+    mLevelOfEntertainment = levelOfEntertainment;
+    determineEntertainmentCost();
+    mCouponCode = couponCode;
+    determineApplicableDiscount();
+  }
+
+  private void determineFoodServiceUnitCost() {
     if (mLevelOfFoodService.equals("snacks")) {
       mFoodServiceUnitCost = 4;
     } else if (mLevelOfFoodService.equals("three course")) {
@@ -26,18 +38,23 @@ class Event {
     } else if (mLevelOfFoodService.equals("seven course")) {
       mFoodServiceUnitCost = 30;
     }
-    mLevelOfDrinkService = levelOfDrinkService;
+  }
+
+  private void determineDrinkServiceUnitCost() {
     if (mLevelOfDrinkService.equals("open bar")) {
       mDrinkServiceUnitCost = 5;
-    }
-    else if (mLevelOfDrinkService.equals("cash bar")) {
+    } else if (mLevelOfDrinkService.equals("cash bar")) {
       mDrinkServiceUnitCost = 1;
     }
-    mCake = cake;
+  }
+
+  private void determineCakeUnitCost() {
     if (mCake) {
       mCakeUnitCost = 3;
     }
-    mLevelOfEntertainment = levelOfEntertainment;
+  }
+
+  private void determineEntertainmentCost() {
     if (mLevelOfEntertainment.equals("karaoke")) {
       mEntertainmentCost = 50;
     } else if (mLevelOfEntertainment.equals("band")) {
@@ -45,7 +62,9 @@ class Event {
     } else if (mLevelOfEntertainment.equals("DJ")) {
       mEntertainmentCost = 300;
     }
-    mCouponCode = couponCode;
+  }
+
+  private void determineApplicableDiscount() {
     if (mCouponCode.equals("10PercentServiceDiscount")) {
       mServicePercentDiscount = 10;
     } else if (mCouponCode.equals("10PercentPackageDiscount")) {
@@ -63,20 +82,48 @@ class Event {
     return mLevelOfFoodService;
   }
 
+  public int getFoodServiceUnitCost() {
+    return mFoodServiceUnitCost;
+  }
+
   public String getLevelOfDrinkService() {
     return mLevelOfDrinkService;
+  }
+
+  public int getDrinkServiceUnitCost() {
+    return mDrinkServiceUnitCost;
   }
 
   public boolean getCake() {
     return mCake;
   }
 
+  public int getCakeUnitCost() {
+    return mCakeUnitCost;
+  }
+
   public String getLevelOfEntertainment() {
     return mLevelOfEntertainment;
   }
 
+  public int getEntertainmentCost() {
+    return 0;
+  }
+
   public String getCouponCode() {
     return mCouponCode;
+  }
+
+  public int getServicePercentDiscount() {
+    return mServicePercentDiscount;
+  }
+
+  public int getPackagePercentDiscount() {
+    return mPackagePercentDiscount;
+  }
+
+  public int getFlatDiscount() {
+    return mFlatDiscount;
   }
 
   public double getEventPrice() {

@@ -39,6 +39,72 @@ public class EventTest {
     assertEquals("freeDJ", testEvent.getCouponCode());
   }
 
+    @Test public void getFoodServiceUnitCost_sevenCourse_30() {
+      Event testEvent = new Event(0, "seven course", "", false, "", "");
+      assertEquals(30, testEvent.getFoodServiceUnitCost());
+    }
+
+    @Test public void getFoodServiceUnitCost_fiveCourse_20() {
+      Event testEvent = new Event(0, "five course", "", false, "", "");
+      assertEquals(20, testEvent.getFoodServiceUnitCost());
+    }
+
+    @Test public void getFoodServiceUnitCost_threeCourse_10() {
+      Event testEvent = new Event(0, "three course", "", false, "", "");
+      assertEquals(10, testEvent.getFoodServiceUnitCost());
+    }
+
+    @Test public void getFoodServiceUnitCost_snacks_4() {
+      Event testEvent = new Event(0, "snacks", "", false, "", "");
+      assertEquals(4, testEvent.getFoodServiceUnitCost());
+    }
+
+    @Test public void getDrinkServiceUnitCost_openBar_5() {
+      Event testEvent = new Event(0, "", "open bar", false, "", "");
+      assertEquals(5, testEvent.getDrinkServiceUnitCost());
+    }
+
+    @Test public void getDrinkServiceUnitCost_cashBar_1() {
+      Event testEvent = new Event(0, "", "cash bar", false, "", "");
+      assertEquals(1, testEvent.getDrinkServiceUnitCost());
+    }
+
+    @Test
+    public void getCakeUnitCost_cakeTrue_3() {
+      Event testEvent = new Event(0, "", "", true, "", "");
+      assertEquals(3, testEvent.getCakeUnitCost());
+    }
+
+    @Test
+    public void getCakeUnitCost_cakeFalse_0() {
+      Event testEvent = new Event(0, "", "", false, "", "");
+      assertEquals(0, testEvent.getCakeUnitCost());
+    }
+
+    @Test
+    public void getServicePercentDiscount_10PercentServiceDiscount_10() {
+      Event testEvent = new Event(0, "", "", false, "", "10PercentServiceDiscount");
+      assertEquals(10, testEvent.getServicePercentDiscount());
+      assertEquals(0, testEvent.getPackagePercentDiscount());
+      assertEquals(0, testEvent.getFlatDiscount());
+    }
+
+    @Test
+    public void getPackagePercentDiscount_10PercentPackageDiscount_10() {
+      Event testEvent = new Event(0, "", "", false, "", "10PercentPackageDiscount");
+      assertEquals(0, testEvent.getServicePercentDiscount());
+      assertEquals(10, testEvent.getPackagePercentDiscount());
+      assertEquals(0, testEvent.getFlatDiscount());
+    }
+
+    @Test
+    public void getFlatDiscount_50DollarsOff_50() {
+      Event testEvent = new Event(0, "", "", false, "", "50DollarsOff");
+      assertEquals(0, testEvent.getServicePercentDiscount());
+      assertEquals(0, testEvent.getPackagePercentDiscount());
+      assertEquals(50, testEvent.getFlatDiscount());
+    }
+
   @Test
   public void calculateEventPrice_one100PeopleSnacksNoExtrasNoCoupons_400() {
     Event testEvent = new Event(100, "snacks", "", false, "", "");
@@ -143,5 +209,4 @@ public class EventTest {
     testEvent.calculateEventPrice();
     assertEquals(250, testEvent.getEventPrice(), 0);
   }
-
 }
